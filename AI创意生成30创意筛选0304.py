@@ -351,8 +351,13 @@ with col_l:
             lookup = "自定义" if st.session_state.get('is_custom') else st.session_state['theme']
             case = SUCCESS_CASES.get(lookup, "")
             strict_format = get_strict_format(current_num)
+            current_theme = st.session_state['theme']  # 获取当前正在处理的题材
 
+            # 👇 【修改】将当前题材再次注入精修 Prompt，防止风格漂移
             p_ref = f"""参考案例：{case}。针对以下 {current_num} 个创意执行【{label}】修改。
+
+            [核心题材约束]：
+            当前创意的专属题材为【{current_theme}】。在执行【{label}】修改时，必须严格保留并强化该题材特征，绝对不可偏离、覆盖或修改原本的核心题材设定！
 
             [硬性准则]：
             1. 每一项必须以“剧名”开头，第二行必须包含“概括：”。
