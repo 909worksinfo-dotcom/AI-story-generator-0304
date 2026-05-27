@@ -291,18 +291,14 @@ with st.sidebar:
         "Claude (Anthropic)": ["claude-3-5-sonnet-20240620"],
         "OpenRouter": ["anthropic/claude-opus-4.6",
                       "anthropic/claude-sonnet-4.6",
-                      "anthropic/claude-sonnet-4",
-                      "anthropic/claude-3.5-haiku",
-                      "anthropic/claude-3.7-sonnet",
-                      "anthropic/claude-3.5-sonnet",
-                      "anthropic/claude-sonnet-4.5",
-                      "anthropic/claude-haiku-4.5",
-                      "anthropic/claude-opus-4.5",
+                       "anthropic/claude-opus-4.7-fast",
+                       "anthropic/claude-opus-4.7",
                       "google/gemini-3-flash-preview",
+                      "google/gemini-3.5-flash",
                       "google/gemini-3-pro-preview",
                       "google/gemini-3.1-pro-preview",
-                      "gpt-4o",
-                      "gpt-4o-mini"]  # 绑定你需要的模型
+                      "openai/gpt-5.5-pro",
+                      "openai/gpt-5.5"]  # 绑定你需要的模型
     }
     model_name = st.selectbox("选择具体型号", models_map[provider])
     api_key = st.text_input(f"输入 {provider} Key", type="password")
