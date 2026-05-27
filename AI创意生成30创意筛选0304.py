@@ -308,7 +308,7 @@ col_l, col_r = st.columns([1, 2])
 with col_l:
     st.subheader("1. 创作与修改设定")
     theme_btn = st.selectbox("题材选择", list(SUCCESS_CASES.keys()))
-    theme_custom = st.text_area("输入其他题材", placeholder="填入将替换主题", height=100)
+    theme_custom = st.text_area("输入其他题材", placeholder="填入将替换主题", height=200)
     active_theme = theme_custom if theme_custom else theme_btn
 
     # 【新增】用户自定义生成数量，默认值为 30
